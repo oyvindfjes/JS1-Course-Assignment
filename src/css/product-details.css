@@ -18,7 +18,7 @@
     object-fit: contain; 
 }
 
-.product-details-info {
+.product-detail-info {
     color: var(--dark-text-color);
     align-self: center;
     font-size: 1.5rem;

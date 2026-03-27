@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="desciption" content="Checkout page for Rainydays clothing">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="desciption" content="Checkout page for Rainydays clothing" />
     <title>Rainydays - Checkout</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <script src="https://kit.fontawesome.com/e476aa0c08.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/e476aa0c08.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
     <header class="header">
-        <nav>
-            <ul class="main-header-menu">
-            <li><a href="index.html"><img class="logo" src="images/rainy-days-logo.png" alt="Rainy Days Logo"></a></li>
-            <li><a class="header-menu-text" href="products.html">Jackets</a></li>
-            <li><a class="header-menu-text">Equipment</a></li>
-            <li><a class="header-menu-text">Kids</a></li>
-            <li><a class="header-menu-text">Our Mission</a></li>
-            </ul>
-        </nav>
-        <div class="user-actions">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <p>Sign in</p>
-        </div>    
+      <nav>
+        <ul class="main-header-menu">
+          <li>
+            <a href="index.html"
+              ><img
+                class="logo"
+                src="images/rainy-days-logo.png"
+                alt="Rainy Days Logo"
+            /></a>
+          </li>
+          <li><a class="header-menu-text" href="products.html">Jackets</a></li>
+          <li><a class="header-menu-text">Equipment</a></li>
+          <li><a class="header-menu-text">Kids</a></li>
+          <li><a class="header-menu-text">Our Mission</a></li>
+        </ul>
+      </nav>
+      <div class="user-actions">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+        <p>Sign in</p>
+      </div>
     </header>
 
     <main>
-        
-        <section class="checkout-container">
-            <h1 class="checkout">Checkout</h1>
-            <div class="checkout-box">
-                <div class="summary">
-                    <img src="./images/RainyDays_Jacket1.jpg" alt="Adventure jacket from the front" class="summary-image">
-                    <div>
-                        <h2>Order summary</h2>
-                        <h3>Adventure</h3>
-                        <p>Quantity: 1</p>
-                        <p>Price: 3999,-</p>
-                    </div>
-                <div>
-                    <p>Shipping: 99,-</p>
-                    <p>Total: 4098,-</p>
+      <section class="checkout-container">
+        <h1 class="checkout">Checkout</h1>
+        <div class="checkout-box">
+            <div id="cart-summary"></div>
+          
+          <div class="details">
+            <form action="confirmation.html" class="details-form">
+              <div>
+                <h2>Shipping details</h2>
+                <div class="shipping-details">
+                  <input type="text" placeholder="First Name" />
+                  <input type="text" placeholder="Last Name" />
+                  <input type="text" placeholder="Card Number" />
+                  <input type="text" placeholder="Exp. date" />
+                  <input type="text" placeholder="CVC" />
                 </div>
-            </div>
-                <div class="details">
-                    
-                    <form action="confirmation.html" class="details-form">
-                        <div>
-                            <h2>Shipping details</h2>
-                            <div class="shipping-details">
-                                <input type="text" placeholder="First Name">
-                                <input type="text" placeholder="Last Name">
-                                <input type="text" placeholder="Card Number">
-                                <input type="text" placeholder="Exp. date">
-                                <input type="text" placeholder="CVC">
-                            </div>
-                        </div>
+              </div>
 
-                        <div>
-                            <h2>Delivery details</h2>
-                            <div class="delivery-details">
-                                <input type="text" placeholder="First Name">
-                                <input type="text" placeholder="Last Name">
-                                <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Country">
-                                <input type="text" placeholder="City">
-                                <input type="text" placeholder="Address">
-                                <button class="confirm-btn">Confirm</button>
-                            </div>
-                        </div>
-                    </form>
+              <div>
+                <h2>Delivery details</h2>
+                <div class="delivery-details">
+                  <input type="text" placeholder="First Name" />
+                  <input type="text" placeholder="Last Name" />
+                  <input type="text" placeholder="Email" />
+                  <input type="text" placeholder="Country" />
+                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder="Address" />
+                  <button class="confirm-btn">Confirm</button>
                 </div>
-            </div>
-            
-        </section>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Contact</p>
-        <p>Join Our Team</p>
-        <p>Privacy Policy</p>
-        <p>Help</p>
-        <p>Change location</p>
-        <p>Language</p>
+      <p>Contact</p>
+      <p>Join Our Team</p>
+      <p>Privacy Policy</p>
+      <p>Help</p>
+      <p>Change location</p>
+      <p>Language</p>
     </footer>
-</body>
+  </body>
 </html>

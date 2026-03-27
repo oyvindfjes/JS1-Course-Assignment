@@ -7,6 +7,7 @@
     <title>Rainydays - Adventure Jacket</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="https://kit.fontawesome.com/e476aa0c08.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -21,55 +22,13 @@
         </nav>
         <div class="user-actions">
             <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
             <p>Sign in</p>
         </div>    
     </header>
 
     <main>
-        <section class="product-detail-container">
-            <img src="./images/RainyDays_Jacket1.jpg" alt="Adventure Jacket from the front" class="product-detail-image">
-
-            <div class="product-details-info">
-                <h2>Adventure</h2>
-                <p>Insulated waterproof outer layer</p>
-                <p>Extreme conditions</p>
-                <p>3999,-</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                    Veritatis, dolorum, minima magni tempora maiores velit 
-                    expedita excepturi consequatur reiciendis esse, 
-                    eum illo distinctio voluptas dolor. Repellendus eos 
-                    fugiat corrupti quae!</p>
-                <input type="checkbox" id="size-checkbox">
-                <label for="size-checkbox"><i class="size-selector-label"> ↓ Select size</i></label>
-                <nav class="size-selector-nav">
-                    <p>XS</p>
-                    <p>S</p>
-                    <p>M</p>
-                    <p>L</p>
-                    <p href="">XL</p>
-                </nav>
-
-                <input type="checkbox" id="add-to-cart-btn" tabindex="0">   
-                <label for="add-to-cart-btn" tabindex="0"><i class="add-to-cart-label"> Add to Cart</i></label>
-
-                <div class="shopping-cart">
-                    <div class="cart-product">
-                        <img src="./images/RainyDays_Jacket1.jpg" alt="Adventure Jacket from the front" class="cart-image">
-                        <div class="cart-product-info">
-                            <h2>Adventure</h2>
-                            <p>Quantity: 1</p>
-                            <p>Price: 3999,-</p>
-                        </div>
-                    </div>
-                    <div class="cart-total">
-                        <p>Shipping: 99,-</p>
-                        <p>Total: 4098,-</p>
-                        <input type="button" value="Checkout" class="checkout-btn" onclick="location.href='checkout.html'">
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
+        <section class="product-detail-container" id="product-detail"></section>
     </main>
 
     <footer>

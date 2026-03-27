@@ -7,6 +7,7 @@
     <title>Rainydays - Jackets</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="https://kit.fontawesome.com/e476aa0c08.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -21,78 +22,21 @@
         </nav>
         <div class="user-actions">
             <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
             <p>Sign in</p>
         </div>    
     </header>
     <main>
         <h1 class="our-jackets-h1">Our Jackets</h1>
 
-        <section class="page-content" id="page-content-products">
-            <div class="product-card">
-                <a href="product-details.html" class="product-details-link">
-                    <img src="images/RainyDays_Jacket1.jpg" alt="Adventure jacket" class="product-image">
-                </a>
-                <div class="card-info">
-                    <h2 class="model-name">Adventure</h2>
-                    <p class="card-price">3999,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            
-            </div>
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket2.jpg" alt="Endure jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Endure</h2>
-                    <p class="card-price">1799,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-                
-            </div>
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket3.jpg" alt="Prevail jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Prevail</h2>
-                    <p class="card-price">1999,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket4.jpg" alt="Encounter jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Encounter</h2>
-                    <p class="card-price">3099,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket5.jpg" alt="Discover jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Discover</h2>
-                    <p class="card-price">2499,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket6.jpg" alt="Overtake jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Overtake</h2>
-                    <p class="card-price">3299,-</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <img src="images/RainyDays_Jacket7.jpg" alt="Outlast jacket" class="product-image">
-                <div class="card-info">
-                    <h2 class="model-name">Outlast</h2>
-                    <p class="card-price">1299</p>
-                    <button class="add-to-cart"> + Add to Cart</button>
-                </div>
-            </div>
-        </section>
+        <label for="gender-filter">Filter by Gender: </label>
+        <select id="gender-filter">
+            <option value="all">All</option>
+            <option value="male">Men</option>
+            <option value="female">Women</option>
+        </select>
+
+        <section class="page-content" id="page-content-products"></section>
     </main>
 
     <footer>

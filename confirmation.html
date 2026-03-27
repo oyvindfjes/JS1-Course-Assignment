@@ -7,6 +7,7 @@
     <title>Rainydays - Order confirmation</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="https://kit.fontawesome.com/e476aa0c08.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -21,26 +22,15 @@
         </nav>
         <div class="user-actions">
             <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
             <p>Sign in</p>
         </div>    
     </header>
     
     <main>
         <section class="confirmation-page-content">
-            <h1>Order completed!</h1>
-            <p>We sent you an email confirming the purchase. </p>
-            <p>Once it is on the way we will have you notified.</p>
-            <p>  Our team is happy to have you onboard!</p>
-
-            <div class="confirmation-summary">
-                <img src="./images/RainyDays_Jacket1.jpg" alt="Adventure jacket from the front" class="summary-image">
-                <h2>Order summary</h2>
-                <h3>Adventure</h3>
-                <p>Quantity: 1</p>
-                <p>Price: 3999,-</p>
-            </div>
+            <div id="order-summary"></div>
         </section>
-        
     </main>
     <footer>
         <p>Contact</p>
