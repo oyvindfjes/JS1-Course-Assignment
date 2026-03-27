@@ -1,0 +1,11 @@
+/* Use this file to store your useful variables */
+/* This could be colors, fonts, or padding sizes! */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+:root {
+  --background-color: #D9D9D9;
+  --bright-text-color: #FEFFFF;
+  --dark-text-color: #47555A;
+  --red-text-color: #DA0000;
+}

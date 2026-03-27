@@ -1,0 +1,40 @@
+.our-jackets-h1 { /*temp fix, sort out flex-box if time*/
+  left: 6vw;
+  position: relative;
+  color: var(--dark-text-color);
+  font-size: 3em;
+  z-index: 1;
+}
+
+#page-content-products {
+    top: -150px;
+}
+
+/*Phone*/
+@media (max-width: 600px) {
+.our-jackets-h1 {
+  font-size: 1.8rem;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+#page-content-products {
+  top: -80px;
+}
+}
+
+/*Tablets and small desktops*/
+
+@media (min-width: 601px) and (max-width: 1200px) {
+.our-jackets-h1 {
+  font-size: 2.5rem;
+  left: 4vw;
+  top: -100px;
+}
+
+#page-content-products {
+  top: -240px;
+}
+}

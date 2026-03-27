@@ -1,0 +1,87 @@
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-text-color); /*Added due to contrast issues*/
+  padding-bottom: 10px;
+  position: relative;
+  top: 150px;
+}
+
+.welcome-text {
+  position: relative;
+  top: 20px;
+  font-size: 2em;
+}
+
+.welcome {
+  color: var(--bright-text-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20px;
+  font-size: 5rem;
+}
+
+.autumn-favorites-h1 { /*temp fix, sort out flex-box if time*/
+  left: 6vw;
+  position: relative;
+  color: var(--dark-text-color);
+  font-size: 3em;
+  z-index: 1;
+  top: 350px;
+}
+
+#page-content-home {
+  margin-bottom: 310px;
+}
+
+/*Phone*/
+@media (max-width: 600px) {
+.welcome {
+  display: none;
+}
+
+.welcome-text {
+  display: none;
+}
+
+.autumn-favorites-h1 {
+  font-size: 1.8rem;
+  top: 20px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+#page-content-home {
+  margin-bottom: 0px;
+  top: -100px;
+  padding-top: 100px;
+}
+}
+
+/*Tabblet and small desktop*/
+
+@media (min-width: 601px) and (max-width: 1200px) {
+.welcome {
+  font-size: 3.5rem;
+  top: 70px;
+}
+
+.welcome-text {
+  font-size: 1.8rem;
+  top: 70px;
+}
+
+.autumn-favorites-h1 {
+  font-size: 2.5rem;
+  top: 280px;
+  left: 4vw;
+}
+
+#page-content-home {
+  margin-bottom: 250px;
+}
+}

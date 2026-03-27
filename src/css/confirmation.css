@@ -1,0 +1,61 @@
+.confirmation-page-content {
+    background-color: white;
+    width: 90vw;
+    height: 100%;
+    gap: 3rem;
+    padding: 160px;
+    margin-bottom: 100px;
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    justify-self: center;
+}
+
+.confirmation-page-content p {
+    font-size: 2rem;
+    color: var(--dark-text-color);
+}
+
+/*Phone*/
+@media (max-width: 600px) {
+.confirmation-page-content {
+    padding: 2rem 1rem;
+    width: 95vw;
+    border-radius: 2rem;
+    gap: 1.5rem;
+}
+
+.confirmation-page-content p {
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+.confirmation-summary {
+    text-align: center;
+}
+
+.summary-image {
+    width: 30vw;
+    margin: 0 auto;
+}
+}
+
+/*Tablet and small desktop*/
+
+@media (min-width: 601px) and (max-width: 1200px) {
+.confirmation-page-content {
+    padding: 3rem 2rem;
+    width: 92vw;
+    gap: 2rem;
+}
+
+.confirmation-page-content p {
+    font-size: 1.6rem;
+}
+
+.summary-image {
+    width: 20vw;
+}
+}
