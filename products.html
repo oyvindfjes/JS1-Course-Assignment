@@ -29,14 +29,27 @@
     <main>
         <h1 class="our-jackets-h1">Our Jackets</h1>
 
-        <label for="gender-filter">Filter by Gender: </label>
-        <select id="gender-filter">
-            <option value="all">All</option>
-            <option value="male">Men</option>
-            <option value="female">Women</option>
-        </select>
+        <div id="filter-div">
+            <label for="gender-filter">Filter by Gender: </label>
+            <select id="gender-filter">
+                <option value="all">All</option>
+                <option value="male">Men</option>
+                <option value="female">Women</option>
+            </select>
+        </div>
 
         <section class="page-content" id="page-content-products"></section>
+
+        <div id="cart-overlay" class="cart-overlay"></div>
+        <div id="cart-sidebar" class="cart-sidebar">
+          <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-cart">X</button>
+          </div>
+          <div id="cart-sidebar-content" class="cart-sidebar-content">
+    
+          </div>
+        </div>
     </main>
 
     <footer>

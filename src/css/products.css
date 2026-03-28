@@ -10,6 +10,19 @@
     top: -150px;
 }
 
+#filter-div {
+  position: fixed;
+  right: 8%;
+  top: 30%;
+  color: var(--dark-text-color);
+  z-index: 3;
+}
+
+#gender-filter {
+  display: block;
+}
+
+
 /*Phone*/
 @media (max-width: 600px) {
 .our-jackets-h1 {
