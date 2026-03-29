@@ -13,10 +13,10 @@ const orderSummaryContainer = document.querySelector("#order-summary");
 const cartCountSpan = document.querySelector("#cart-count");
 const genderFilter = document.querySelector("#gender-filter");
 const cartIcon = document.querySelector(".fa-cart-shopping");
-const cartSidebar = document.getElementById("cart-sidebar");
-const cartOverlay = document.getElementById("cart-overlay");
-const closeCartBtn = document.getElementById("close-cart");
-const cartSidebarContent = document.getElementById("cart-sidebar-content");
+const cartSidebar = document.querySelector("#cart-sidebar");
+const cartOverlay = document.querySelector("#cart-overlay");
+const closeCartBtn = document.querySelector("#close-cart");
+const cartSidebarContent = document.querySelector("#cart-sidebar-content");
 
 
 
@@ -33,6 +33,7 @@ function hideSpinner(container) {
     }
 }
 
+//Fetch products from API
 async function fetchProducts() {
     const url = "https://v2.api.noroff.dev/rainy-days";
 
@@ -48,10 +49,7 @@ async function fetchProducts() {
     }
 }
 
-
-
-//Product cards for Home and Products
-
+//Render product cards for home and products page
 function renderProductCards(products, container) {
     if (!container) return;
     container.innerHTML = "";
@@ -74,7 +72,7 @@ function renderProductCards(products, container) {
     attachAddToCartEvents();
 }
 
-//Product details
+//Render product details on product details page
 function renderProductDetails(product) {
     productDetailContainer.innerHTML = `
             <div class="product-detail-info">
@@ -88,7 +86,7 @@ function renderProductDetails(product) {
     attachAddToCartEvents();
 }
 
-//Order summary at confirmation
+//Order summary at confirmation page
 function renderOrderSummary (order) {
     orderSummaryContainer.innerHTML = `
         <h1>Order completed!</h1>
@@ -110,8 +108,7 @@ function renderOrderSummary (order) {
     `;
 }
 
-//Cart
-//Cart summary
+//Cart summary at checkout page
 function renderCartSummary() {
     if(!cartSummaryContainer) return;
     cart = loadCart();
@@ -133,7 +130,6 @@ function renderCartSummary() {
                 <span>${item.title}</span>
                 <span>${item.quantity}</span>
                 <span>${item.price},-</span>
-                <button class="remove-item">Remove</button>
             </div>
         `;
     });
@@ -145,18 +141,10 @@ function renderCartSummary() {
         <p>Shipping: ${shipping},-</p>
         <p>Total: ${totalCost},-</p>
     </div>
-`;
-
-document.querySelectorAll(".remove-item").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const id = parseInt(btn.closest(".cart-item").dataset.id);
-        removeFromCart(id);
-        renderCartSummary();
-        updateCartCounter();
-    });
-});
+    `;
 }
 
+//Filter products on products page
 function renderFilteredProducts() {
     if (!allProducts.length) return;
     const selectedGender = genderFilter ? genderFilter.value : "all";
@@ -164,8 +152,7 @@ function renderFilteredProducts() {
     renderProductCards(filtered, pageContentProducts);
 }
 
-//Cart logic
-
+//Cart logic and sidebar rendering
 function renderCartSidebar() {
     if (!cartSidebarContent) return;
     const cart = loadCart();
@@ -198,7 +185,7 @@ function renderCartSidebar() {
             <p>Total: ${totalCost},-</p>
             <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
         </div>
-    `;
+        `;
     cartSidebarContent.innerHTML = html;
     document.querySelectorAll(".remove-item-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -289,6 +276,7 @@ async function handleAddToCart(e) {
     }
 }
 
+//Checkout form handling 
 function attachCheckoutFormEvent() {
     const confirmBtn = document.querySelector(".confirm-btn");
     if (!confirmBtn) return;
@@ -316,7 +304,7 @@ function attachCheckoutFormEvent() {
     });
 }
 
-//Filters
+//Filter products on products page
 function filterByGender(products, selectedGender) {
     if (selectedGender === "all") return products;
     const genderMap = {
@@ -327,9 +315,6 @@ function filterByGender(products, selectedGender) {
     return products.filter(product => product.gender === apiGender);
 }
 
-
-
-// --- EVENT LISTENERS ---
 
 // --- INITIAL LOAD ---
 async function initHome() {
@@ -393,7 +378,7 @@ async function initProductDetail() {
     updateCartCounter();
 }
 
-async function initCart() {
+function initCart() {
     if (cartIcon) cartIcon.addEventListener("click", openCartSidebar);
     if (closeCartBtn) closeCartBtn.addEventListener("click", closeCartSidebar);
     if (cartOverlay) cartOverlay.addEventListener("click", closeCartSidebar);
@@ -406,7 +391,7 @@ async function initCheckout() {
     updateCartCounter();
 }
 
-async function initConfirmation() {
+function initConfirmation() {
     if (!orderSummaryContainer) return;
     const order = JSON.parse(localStorage.getItem("lastOrder"));
     if (!order) {
@@ -416,9 +401,9 @@ async function initConfirmation() {
     renderOrderSummary(order);
 }
 
+//Starting the app by initializing the appropriate page based on the DOM elements present
 async function startApp() {
     initCart();
-    updateCartCounter(); 
     if (pageContentHome) {
         await initHome();
     } else if (pageContentProducts) {
@@ -428,7 +413,7 @@ async function startApp() {
     } else if (cartSummaryContainer) {
         await initCheckout();
     } else if (orderSummaryContainer) {
-        await initConfirmation();
+        initConfirmation();
     }
 }
 startApp();
